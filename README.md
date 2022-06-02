@@ -25,7 +25,7 @@ sudo dpkg-scanpackages /usr/local/sgx_debian_local_repo | gzip -9c > /usr/local/
 sudo echo "deb [trusted=yes] file:/usr/local/sgx_debian_local_repo/ $(source /etc/os-release; echo $VERSION_CODENAME) main" >> /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get -y install libsgx-quote-ex-dev libsgx-dcap-ql-dev
-git clone https://github.com/nick-mobilecoin/prebuild_dcap_sim.git
+git clone https://github.com/nick-mobilecoin/prebuilt_dcap_sim.git
 cd prebuilt_dcap_sim/$(source /etc/os-release; echo $VERSION_CODENAME)
 sudo cp libsgx_id_enclave.signed.so.1.11.101.1 /usr/lib/x86_64-linux-gnu/libsgx_id_enclave.signed.so.1.11.101.1
 sudo cp libsgx_pce.signed.so.1.16.100.0 /usr/lib/x86_64-linux-gnu/libsgx_pce.signed.so.1.16.100.0
